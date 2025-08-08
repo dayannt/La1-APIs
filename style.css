@@ -1,4 +1,4 @@
-/* Reset básico */
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
   --violet-1: #a463f2;
@@ -13,7 +13,6 @@ body {
   -webkit-font-smoothing:antialiased;
 }
 
-/* --- HEADER (BUSCADOR) --- */
 .anime-section {
   background: linear-gradient(135deg, var(--violet-1), var(--violet-2));
   color: white;
@@ -29,7 +28,6 @@ body {
   font-size: 1.6rem;
 }
 
-/* fila del formulario */
 .anime-search {
   display: flex;
   gap: 10px;
@@ -60,12 +58,10 @@ body {
 }
 .anime-search button:hover { background: rgba(255,255,255,0.22); transform: translateY(-2px); }
 
-/* estado (loading/error/empty) */
 .status { text-align:center; margin-top:8px; font-weight:600; color: #fff; }
 .status .loading { color: #ffe9ff; }
 .status .error { color: #ffd5d5; }
 
-/* grid de resultados de anime (lado a lado) */
 .anime-results {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -74,7 +70,6 @@ body {
   padding: 6px;
 }
 
-/* tarjeta anime */
 .anime-card {
   background: var(--card-bg);
   border-radius: 12px;
@@ -96,13 +91,11 @@ body {
 .anime-card h3 { color: var(--violet-2); font-size: 1rem; margin-bottom:6px; text-align:left; }
 .anime-card .meta { font-size: 13px; color:#555; margin-bottom:6px; text-align:left; }
 .anime-card p.synopsis {
-  font-size: 13px; color:#333; line-height:1.3;
+  font-size: 13px; color:#ff0000; line-height:1.3;
   display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;
   overflow: hidden; transition: all .25s ease;
 }
 .anime-card:hover p.synopsis { -webkit-line-clamp: 12; }
-
-/* --- FILA DE APIS (ABAJO) --- */
 .random-row {
   max-width: 1100px;
   margin: 22px auto;
@@ -136,18 +129,14 @@ body {
 }
 .api-card button:hover { transform: translateY(-4px); }
 
-/* contenido dentro de la card (evitar overflow) */
 .card-body { width:100%; text-align:left; word-break:break-word; min-height:64px; }
 
-/* loading / error / empty para cards */
 .loading { color: var(--violet-2); font-weight:600; text-align:center; }
 .error { color:#d43f3f; font-weight:600; text-align:center; }
 .empty { color:#666; text-align:center; }
 
-/* animación */
 @keyframes fadeInUp { from { transform: translateY(10px); opacity:0 } to { transform: translateY(0); opacity:1 } }
 
-/* responsive */
 @media (max-width: 980px) {
   .api-card { width: 45%; }
 }
