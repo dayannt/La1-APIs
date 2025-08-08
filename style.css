@@ -91,7 +91,7 @@ body {
 .anime-card h3 { color: var(--violet-2); font-size: 1rem; margin-bottom:6px; text-align:left; }
 .anime-card .meta { font-size: 13px; color:#555; margin-bottom:6px; text-align:left; }
 .anime-card p.synopsis {
-  font-size: 13px; color:#ff0000; line-height:1.3;
+  font-size: 13px; color:#000000; line-height:1.3;
   display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;
   overflow: hidden; transition: all .25s ease;
 }
@@ -133,7 +133,7 @@ body {
 
 .loading { color: var(--violet-2); font-weight:600; text-align:center; }
 .error { color:#d43f3f; font-weight:600; text-align:center; }
-.empty { color:#666; text-align:center; }
+.empty { color:#ffffff; text-align:center; }
 
 @keyframes fadeInUp { from { transform: translateY(10px); opacity:0 } to { transform: translateY(0); opacity:1 } }
 
