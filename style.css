@@ -1,0 +1,156 @@
+/* Reset básico */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --violet-1: #a463f2;
+  --violet-2: #6c4b9e;
+  --bg: #f9f5ff;
+  --card-bg: #ffffff;
+}
+body {
+  font-family: Inter, "Poppins", Arial, sans-serif;
+  background: var(--bg);
+  color: #222;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* --- HEADER (BUSCADOR) --- */
+.anime-section {
+  background: linear-gradient(135deg, var(--violet-1), var(--violet-2));
+  color: white;
+  padding: 28px 12px;
+}
+.anime-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.anime-inner h1 {
+  text-align: center;
+  margin-bottom: 12px;
+  font-size: 1.6rem;
+}
+
+/* fila del formulario */
+.anime-search {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.anime-search input,
+.anime-search select,
+.anime-search button {
+  padding: 10px 12px;
+  border-radius: 20px;
+  border: none;
+  font-size: 14px;
+  outline: none;
+}
+.anime-search input, .anime-search select {
+  min-width: 160px;
+  flex: 1 1 220px;
+}
+.anime-search button {
+  background: rgba(255,255,255,0.14);
+  color: white;
+  cursor: pointer;
+  min-width: 110px;
+  transition: background .15s ease, transform .12s ease;
+}
+.anime-search button:hover { background: rgba(255,255,255,0.22); transform: translateY(-2px); }
+
+/* estado (loading/error/empty) */
+.status { text-align:center; margin-top:8px; font-weight:600; color: #fff; }
+.status .loading { color: #ffe9ff; }
+.status .error { color: #ffd5d5; }
+
+/* grid de resultados de anime (lado a lado) */
+.anime-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 14px;
+  padding: 6px;
+}
+
+/* tarjeta anime */
+.anime-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 6px 18px rgba(17,12,38,0.06);
+  overflow: hidden;
+  display:flex;
+  flex-direction: column;
+  animation: fadeInUp .45s ease forwards;
+  opacity: 0;
+}
+.anime-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+.anime-card h3 { color: var(--violet-2); font-size: 1rem; margin-bottom:6px; text-align:left; }
+.anime-card .meta { font-size: 13px; color:#555; margin-bottom:6px; text-align:left; }
+.anime-card p.synopsis {
+  font-size: 13px; color:#333; line-height:1.3;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;
+  overflow: hidden; transition: all .25s ease;
+}
+.anime-card:hover p.synopsis { -webkit-line-clamp: 12; }
+
+/* --- FILA DE APIS (ABAJO) --- */
+.random-row {
+  max-width: 1100px;
+  margin: 22px auto;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  padding: 0 12px 36px;
+  flex-wrap: wrap;
+}
+.api-card {
+  background: var(--card-bg);
+  width: 320px;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  text-align: center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.api-card h2 { color: var(--violet-2); margin-bottom:8px; }
+.api-card .card-controls { margin-bottom:10px; }
+.api-card button {
+  padding: 8px 12px;
+  background: linear-gradient(180deg, var(--violet-1), var(--violet-2));
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.api-card button:hover { transform: translateY(-4px); }
+
+/* contenido dentro de la card (evitar overflow) */
+.card-body { width:100%; text-align:left; word-break:break-word; min-height:64px; }
+
+/* loading / error / empty para cards */
+.loading { color: var(--violet-2); font-weight:600; text-align:center; }
+.error { color:#d43f3f; font-weight:600; text-align:center; }
+.empty { color:#666; text-align:center; }
+
+/* animación */
+@keyframes fadeInUp { from { transform: translateY(10px); opacity:0 } to { transform: translateY(0); opacity:1 } }
+
+/* responsive */
+@media (max-width: 980px) {
+  .api-card { width: 45%; }
+}
+@media (max-width: 640px) {
+  .api-card { width: 100%; }
+}

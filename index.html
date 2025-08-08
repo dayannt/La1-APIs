@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lab Fetch APIs — Anime arriba, APIs abajo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="anime-section">
+    <div class="anime-inner">
+      <h1>Buscador de Anime</h1>
+
+      <div class="anime-search">
+        <input id="animeName" type="text" placeholder="Nombre del anime (puedes dejar vacío)" />
+        <input id="animeLimit" type="number" min="1" max="20" placeholder="Límite (ej: 6)" />
+        <select id="animeType">
+          <option value="">Todos los tipos</option>
+          <option value="tv">TV</option>
+          <option value="movie">Película</option>
+          <option value="ova">OVA</option>
+        </select>
+        <button id="searchAnime">Buscar</button>
+      </div>
+
+      <div id="animeStatus" class="status" aria-live="polite"></div>
+      <div id="animeResults" class="anime-results" aria-live="polite"></div>
+    </div>
+  </header>
+  <main>
+    <section class="random-row">
+      <div class="api-card" id="userCard">
+        <h2>Usuario Aleatorio</h2>
+        <div class="card-controls">
+          <button id="getUser">Obtener Usuario</button>
+        </div>
+        <div id="userResult" class="card-body"></div>
+      </div>
+
+      <div class="api-card" id="bitcoinCard">
+        <h2>Precio Bitcoin</h2>
+        <div class="card-controls">
+          <button id="getBitcoin">Obtener Precio</button>
+        </div>
+        <div id="bitcoinResult" class="card-body"></div>
+      </div>
+
+      <div class="api-card" id="catCard">
+        <h2>Dato de Gatos</h2>
+        <div class="card-controls">
+          <button id="getCatFact">Obtener Dato</button>
+        </div>
+        <div id="catResult" class="card-body"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
